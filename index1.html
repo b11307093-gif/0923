@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紀亮丞 Liang-Cheng Chi | 龍族秘法個人簡歷 Archive of the Arcane Scholar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Realistic Gothic & High-End Serif Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            100: '#f9f6ed',
+                            200: '#f2ebd9',
+                            300: '#e8e2d5',
+                            400: '#dcd3be',
+                        },
+                        draconic: {
+                            gold: '#d4af37',
+                            brightgold: '#f3e5ab',
+                            amber: '#b8860b',
+                            darkred: '#4a0e17',
+                            obsidian: '#1a181b',
+                            slate: '#2c302e',
+                            silver: '#c0c0c0',
+                            brightcyan: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        cinzelDeco: ['"Cinzel Decorative"', 'serif'],
+                        serifTC: ['"Noto Serif TC"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Realistic Parchment Grain Texture Simulation */
+        body {
+            background-color: #f2ebd9;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, rgba(220, 211, 190, 0.6) 100%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        /* Metallic Dragon Metallic Borders & Frames */
+        .dragon-frame {
+            border: 2px solid #b8860b;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(242, 235, 217, 0.95) 100%);
+            box-shadow: 
+                0 10px 30px -5px rgba(26, 24, 27, 0.15),
+                inset 0 0 0 1px rgba(212, 175, 55, 0.4),
+                inset 0 0 20px rgba(184, 134, 11, 0.08);
+            position: relative;
+            backdrop-filter: blur(4px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .dragon-frame:hover {
+            transform: translateY(-4px);
+            border-color: #d4af37;
+            box-shadow: 
+                0 20px 40px -10px rgba(184, 134, 11, 0.25),
+                inset 0 0 0 1px rgba(243, 229, 171, 0.8),
+                inset 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Metallic Corner Accents */
+        .corner-totem {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-color: #b8860b;
+            pointer-events: none;
+        }
+        .corner-tl { top: -2px; left: -2px; border-top: 3px solid #b8860b; border-left: 3px solid #b8860b; }
+        .corner-tr { top: -2px; right: -2px; border-top: 3px solid #b8860b; border-right: 3px solid #b8860b; }
+        .corner-bl { bottom: -2px; left: -2px; border-bottom: 3px solid #b8860b; border-left: 3px solid #b8860b; }
+        .corner-br { bottom: -2px; right: -2px; border-bottom: 3px solid #b8860b; border-right: 3px solid #b8860b; }
+
+        /* Golden Metallic Buttons */
+        .btn-gold {
+            background: linear-gradient(180deg, #d4af37 0%, #b8860b 100%);
+            border: 1px solid #f3e5ab;
+            color: #1a181b;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(184, 134, 11, 0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.25s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(180deg, #f3e5ab 0%, #d4af37 100%);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Glassmorphic Obsidian Badge */
+        .badge-obsidian {
+            background: rgba(26, 24, 27, 0.88);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #f3e5ab;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e8e2d5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b8860b;
+            border-radius: 2px;
+            border: 2px solid #e8e2d5;
+        }
+
+        /* Pulsing Ember Animation */
+        @keyframes emberPulse {
+            0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.4)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8)); }
+        }
+        .animate-ember {
+            animation: emberPulse 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="text-draconic-obsidian font-serifTC relative min-h-screen selection:bg-draconic-amber selection:text-white">
+
+    <!-- Interactive Canvas for Dragon Arcane Particles & Spell Trail -->
+    <canvas id="arcaneCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-70"></canvas>
+
+    <!-- Top Ornate Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-parchment-200/90 backdrop-blur-md border-b-2 border-draconic-amber/40 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Metallic Emblem Brand -->
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="relative w-11 h-11 bg-draconic-obsidian border-2 border-draconic-gold rounded-full flex items-center justify-center text-draconic-gold text-xl shadow-lg transition-transform duration-300 group-hover:rotate-45">
+                    <!-- Dragon Wings Crest SVG Icon -->
+                    <svg class="w-6 h-6 fill-current text-draconic-gold" viewBox="0 0 24 24">
+                        <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-cinzel text-xl font-bold tracking-wider text-draconic-obsidian block leading-none">LIANG-CHENG CHI</span>
+                    <span class="font-serifTC text-xs text-draconic-amber font-semibold tracking-widest block mt-1">紀亮丞 · 秘法學者</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-cinzel text-sm font-bold tracking-widest text-draconic-obsidian">
+                <a href="#hero" class="hover:text-draconic-amber transition-colors flex items-center gap-2"><i class="fa-solid fa-dragon text-xs text-draconic-amber"></i> 首頁 ARCHIVE</a>
+                <a href="#about" class="hover:text-draconic-amber transition-colors flex items-center gap-2"><i class="fa-solid fa-shield-halved text-xs text-draconic-amber"></i> 關於我 BIOGRAPHY</a>
+                <a href="#traits" class="hover:text-draconic-amber transition-colors flex items-center gap-2"><i class="fa-solid fa-scroll text-xs text-draconic-amber"></i> 天賦與優勢 SPELLS</a>
+                <a href="#contact" class="hover:text-draconic-amber transition-colors flex items-center gap-2"><i class="fa-solid fa-feather-pointed text-xs text-draconic-amber"></i> 聯繫方式 CONTACT</a>
+            </nav>
+
+            <!-- Sound & Magic Control Button -->
+            <div class="flex items-center space-x-4">
+                <button id="spellBurstBtn" onclick="triggerMagicSpell(event)" class="btn-gold px-4 py-2 rounded text-xs font-cinzel font-bold tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> 施放秘法 SPELL
+                </button>
+                <button id="mobileMenuBtn" onclick="toggleMobileNav()" class="md:hidden text-draconic-obsidian text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileNav" class="hidden md:hidden bg-parchment-100 border-b-2 border-draconic-amber p-6 font-cinzel space-y-4 shadow-xl">
+            <a href="#hero" onclick="toggleMobileNav()" class="block text-draconic-obsidian hover:text-draconic-amber font-bold"><i class="fa-solid fa-dragon mr-2 text-draconic-amber"></i> 首頁 ARCHIVE</a>
+            <a href="#about" onclick="toggleMobileNav()" class="block text-draconic-obsidian hover:text-draconic-amber font-bold"><i class="fa-solid fa-shield-halved mr-2 text-draconic-amber"></i> 關於我 BIOGRAPHY</a>
+            <a href="#traits" onclick="toggleMobileNav()" class="block text-draconic-obsidian hover:text-draconic-amber font-bold"><i class="fa-solid fa-scroll mr-2 text-draconic-amber"></i> 天賦與優勢 SPELLS</a>
+            <a href="#contact" onclick="toggleMobileNav()" class="block text-draconic-obsidian hover:text-draconic-amber font-bold"><i class="fa-solid fa-feather-pointed mr-2 text-draconic-amber"></i> 聯繫方式 CONTACT</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-28 relative z-10">
+
+        <!-- SECTION 1: HERO / HOME -->
+        <section id="hero" class="min-h-[82vh] flex flex-col lg:flex-row items-center justify-between gap-12 pt-6">
+            
+            <!-- Left Info Panel -->
+            <div class="w-full lg:w-3/5 space-y-8">
+                <!-- Dragon Seal Badge -->
+                <div class="inline-flex items-center space-x-3 badge-obsidian px-4 py-2 rounded-full border border-draconic-gold/50 shadow-lg">
+                    <i class="fa-solid fa-crown text-draconic-gold text-sm animate-ember"></i>
+                    <span class="font-cinzel text-xs tracking-widest text-draconic-brightgold">ROYAL ARCANE SCHOLAR · MIS</span>
+                </div>
+
+                <!-- Main Name Header -->
+                <div class="space-y-3">
+                    <h1 class="font-cinzelDeco text-4xl sm:text-5xl lg:text-6xl font-extrabold text-draconic-obsidian tracking-wide leading-tight">
+                        紀 亮 丞 <span class="block text-2xl sm:text-3xl font-cinzel text-draconic-amber font-normal mt-2 tracking-widest">LIANG-CHENG CHI</span>
+                    </h1>
+                    <div class="w-32 h-1 bg-gradient-to-r from-draconic-amber via-draconic-gold to-transparent my-4"></div>
+                </div>
+
+                <!-- One Line Intro Card -->
+                <div class="dragon-frame p-6 rounded-lg relative overflow-hidden">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="text-3xl text-draconic-amber mt-1"><i class="fa-solid fa-quote-left"></i></div>
+                        <div>
+                            <p class="font-serifTC text-xl sm:text-2xl font-bold text-draconic-obsidian leading-snug">
+                                「我是一名喜愛桌遊的大學生。」
+                            </p>
+                            <p class="font-serifTC text-sm text-gray-700 mt-2 leading-relaxed">
+                                將智慧局局博弈的桌遊邏輯，融會貫通於資訊管理學系（MIS）的數據分析與系統思維之中。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-5 font-cinzel text-sm font-bold">
+                    <a href="#about" class="btn-gold px-8 py-3.5 rounded shadow-xl flex items-center gap-3">
+                        <i class="fa-solid fa-scroll text-base"></i> 探索學者簡歷 DISCOVER
+                    </a>
+                    <a href="#contact" class="px-8 py-3.5 rounded bg-draconic-obsidian text-draconic-brightgold border border-draconic-gold/60 hover:bg-draconic-slate transition-all flex items-center gap-3 shadow-lg">
+                        <i class="fa-solid fa-paper-plane text-base"></i> 發送傳音信件 CONTACT
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Metallic Arcana Dashboard / Character Crest -->
+            <div class="w-full lg:w-2/5 max-w-md">
+                <div class="dragon-frame p-8 rounded-xl space-y-6 relative">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+
+                    <!-- Header Crest Symbol -->
+                    <div class="text-center pb-4 border-b border-draconic-amber/30">
+                        <div class="w-20 h-20 mx-auto bg-draconic-obsidian border-2 border-draconic-gold rounded-full flex items-center justify-center text-4xl text-draconic-gold shadow-2xl mb-3 animate-ember">
+                            <i class="fa-solid fa-dragon"></i>
+                        </div>
+                        <h2 class="font-cinzel text-xl font-bold text-draconic-obsidian tracking-wider">SCHOLAR MATRIX</h2>
+                        <span class="font-serifTC text-xs text-draconic-amber">資訊管理學系 · 龍族屬性儀表</span>
+                    </div>
+
+                    <!-- Realistic Arcana Attribute Meters -->
+                    <div class="space-y-4 font-serifTC text-xs">
+                        <!-- Stat 1 -->
+                        <div>
+                            <div class="flex justify-between font-bold text-draconic-obsidian mb-1">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-eye text-draconic-amber"></i> 觀察分析力 INSIGHT</span>
+                                <span class="font-cinzel text-draconic-amber">96 / 100</span>
+                            </div>
+                            <div class="w-full bg-parchment-300 h-2.5 rounded-full border border-draconic-amber/40 p-0.5">
+                                <div class="bg-gradient-to-r from-draconic-amber to-draconic-gold h-full rounded-full w-[96%] shadow-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 2 -->
+                        <div>
+                            <div class="flex justify-between font-bold text-draconic-obsidian mb-1">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-draconic-amber"></i> 高速學習力 MENTAL FLEX</span>
+                                <span class="font-cinzel text-draconic-amber">94 / 100</span>
+                            </div>
+                            <div class="w-full bg-parchment-300 h-2.5 rounded-full border border-draconic-amber/40 p-0.5">
+                                <div class="bg-gradient-to-r from-draconic-amber to-draconic-gold h-full rounded-full w-[94%] shadow-sm"></div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div>
+                            <div class="flex justify-between font-bold text-draconic-obsidian mb-1">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-chess-knight text-draconic-amber"></i> 桌遊戰略布局 STRATEGY</span>
+                                <span class="font-cinzel text-draconic-amber">91 / 100</span>
+                            </div>
+                            <div class="w-full bg-parchment-300 h-2.5 rounded-full border border-draconic-amber/40 p-0.5">
+                                <div class="bg-gradient-to-r from-draconic-amber to-draconic-gold h-full rounded-full w-[91%] shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Tags -->
+                    <div class="pt-4 border-t border-draconic-amber/30 flex flex-wrap gap-2 text-xs font-serifTC">
+                        <span class="px-2.5 py-1 bg-draconic-obsidian text-draconic-brightgold rounded border border-draconic-gold/40">🏛️ 資管體系</span>
+                        <span class="px-2.5 py-1 bg-draconic-obsidian text-draconic-brightgold rounded border border-draconic-gold/40">🎲 策略遊戲</span>
+                        <span class="px-2.5 py-1 bg-draconic-obsidian text-draconic-brightgold rounded border border-draconic-gold/40">🔍 心理觀察</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT ME -->
+        <section id="about" class="space-y-12 pt-8">
+            <!-- Section Header -->
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-3 text-draconic-amber text-lg">
+                    <i class="fa-solid fa-dragon"></i>
+                    <span class="font-cinzel font-bold tracking-widest uppercase text-sm">BIOGRAPHY & CHRONICLE</span>
+                    <i class="fa-solid fa-dragon transform scale-x-[-1]"></i>
+                </div>
+                <h2 class="font-cinzelDeco text-3xl sm:text-4xl font-bold text-draconic-obsidian">關於我 · 紀亮丞</h2>
+                <div class="w-24 h-1 bg-draconic-amber mx-auto"></div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                <!-- Left Portrait with Ornate Dragon Border -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <div class="dragon-frame p-6 rounded-xl text-center">
+                        <div class="corner-totem corner-tl"></div>
+                        <div class="corner-totem corner-tr"></div>
+                        <div class="corner-totem corner-bl"></div>
+                        <div class="corner-totem corner-br"></div>
+
+                        <!-- Ornate Silver Dragon Border Image Container -->
+                        <div class="relative group mx-auto max-w-sm border-4 border-draconic-obsidian p-2 rounded-lg bg-parchment-300 shadow-2xl">
+                            <img id="portraitImg" src="images/dr.png" alt="紀亮丞肖像" class="w-full h-auto aspect-[4/5] object-cover rounded border border-draconic-gold/60 transition-transform duration-500 group-hover:scale-[1.02]">
+                            
+                            <!-- Dragon Wing Overlay Badge -->
+                            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-draconic-obsidian text-draconic-brightgold border-2 border-draconic-gold font-cinzel text-xs px-4 py-1.5 rounded-full shadow-xl flex items-center gap-2 whitespace-nowrap">
+                                <i class="fa-solid fa-shield-cat text-draconic-gold"></i> MIS SCHOLAR PORTRAIT
+                            </div>
+                        </div>
+
+                        <p class="font-serifTC text-xs text-gray-600 mt-8">寫實龍族風格人物檔案照片</p>
+                    </div>
+                </div>
+
+                <!-- Right Detailed Narrative Cards -->
+                <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                    <!-- Bio Card 1 -->
+                    <div class="dragon-frame p-6 rounded-xl space-y-3">
+                        <div class="corner-totem corner-tl"></div>
+                        <div class="corner-totem corner-tr"></div>
+                        <h3 class="font-cinzel text-lg font-bold text-draconic-obsidian flex items-center gap-3">
+                            <i class="fa-solid fa-book-atlas text-draconic-amber"></i> 資管系的系統化思維 (INFORMATION MANAGEMENT)
+                        </h3>
+                        <p class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                            就讀於資訊管理學系（資管），專注於將「資訊技術」與「管理決策」深度融合。在數據流、系統架構與邏輯模型的建構過程中，我擅長掌握關鍵脈絡，並將複雜的資訊組織化與透明化。
+                        </p>
+                    </div>
+
+                    <!-- Bio Card 2 -->
+                    <div class="dragon-frame p-6 rounded-xl space-y-3">
+                        <div class="corner-totem corner-tl"></div>
+                        <div class="corner-totem corner-tr"></div>
+                        <h3 class="font-cinzel text-lg font-bold text-draconic-obsidian flex items-center gap-3">
+                            <i class="fa-solid fa-chess-board text-draconic-amber"></i> 桌遊狂熱與策略推理 (BOARD GAME STRATEGY)
+                        </h3>
+                        <p class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                            作為一名熱愛桌遊的大學生，我將桌上遊戲視為極致的思考與決策訓練。不論是德式桌遊的長遠資源佈局、陣營桌遊的資訊心理戰，還是合作桌遊的風險控管，都鍛鍊了我靈活的戰略應變能力。
+                        </p>
+                    </div>
+
+                    <!-- Bio Card 3 -->
+                    <div class="dragon-frame p-6 rounded-xl space-y-3">
+                        <div class="corner-totem corner-tl"></div>
+                        <div class="corner-totem corner-tr"></div>
+                        <h3 class="font-cinzel text-lg font-bold text-draconic-obsidian flex items-center gap-3">
+                            <i class="fa-solid fa-users-viewfinder text-draconic-amber"></i> 觀察人心與敏捷應變 (HUMAN BEHAVIOR ANALYTICS)
+                        </h3>
+                        <p class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                            桌遊場上最迷人的變數永遠是「人」。透過觀察不同個體的決策習慣與言行反應，我建立起敏銳的人際觀察力，這不僅助我在團隊合作中迅速找到最佳對接方式，也讓我在規劃使用者體驗時更具洞察力。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTERESTS & ADVANTAGES -->
+        <section id="traits" class="space-y-12 pt-8">
+            <!-- Section Header -->
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-3 text-draconic-amber text-lg">
+                    <i class="fa-solid fa-scroll"></i>
+                    <span class="font-cinzel font-bold tracking-widest uppercase text-sm">DRACONIC SKILLS & ADVANTAGES</span>
+                    <i class="fa-solid fa-scroll"></i>
+                </div>
+                <h2 class="font-cinzelDeco text-3xl sm:text-4xl font-bold text-draconic-obsidian">興趣與核心優勢</h2>
+                <div class="w-24 h-1 bg-draconic-amber mx-auto"></div>
+            </div>
+
+            <!-- Two Main Trait Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="dragon-frame p-8 rounded-xl space-y-4 relative group">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-draconic-obsidian text-draconic-gold rounded-lg flex items-center justify-center text-2xl border border-draconic-gold shadow-md">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <div>
+                            <span class="font-cinzel text-xs text-draconic-amber font-bold tracking-widest block">CORE INTEREST</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-draconic-obsidian">觀察與分析不同人</h3>
+                        </div>
+                    </div>
+                    <div class="font-cinzel text-xs text-draconic-amber font-bold bg-draconic-obsidian/10 px-3 py-1.5 rounded inline-block">
+                        SPELL TRAIT: EYE OF INSIGHT (洞察之眼)
+                    </div>
+                    <p class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                        熱衷於捕捉人在不同情境下的選擇模式、情緒細節與邏輯理路。這項興趣使我具備優異的人際同理心與情境分析能力，能在團隊中迅速凝聚共識，找出最佳合作策略。
+                    </p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="dragon-frame p-8 rounded-xl space-y-4 relative group">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="w-14 h-14 bg-draconic-obsidian text-draconic-gold rounded-lg flex items-center justify-center text-2xl border border-draconic-gold shadow-md">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <span class="font-cinzel text-xs text-draconic-amber font-bold tracking-widest block">CORE STRENGTH</span>
+                            <h3 class="font-cinzel text-2xl font-bold text-draconic-obsidian">學習能力強</h3>
+                        </div>
+                    </div>
+                    <div class="font-cinzel text-xs text-draconic-amber font-bold bg-draconic-obsidian/10 px-3 py-1.5 rounded inline-block">
+                        SPELL TRAIT: MIND TRANSCENDENCE (心智超越)
+                    </div>
+                    <p class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                        面對新技術、新工具或全新的領域規則，具備極高的高效理解力與吸收速度。就像快速研讀複雜的桌遊說明書一樣，能迅速將新知識轉化為實際的戰鬥力與執行力。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Board Game Strategy Interactive Showcase -->
+            <div class="dragon-frame p-8 rounded-xl space-y-6">
+                <div class="corner-totem corner-tl"></div>
+                <div class="corner-totem corner-tr"></div>
+                
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-draconic-amber/30 pb-4 gap-4">
+                    <div>
+                        <h3 class="font-cinzel text-xl font-bold text-draconic-obsidian flex items-center gap-3">
+                            <i class="fa-solid fa-chess text-draconic-amber"></i> 桌遊策略智庫 (BOARD GAME STRATEGY MATRIX)
+                        </h3>
+                        <p class="font-serifTC text-xs text-gray-600 mt-1">點擊不同陣營切換觀看桌遊如何形塑我的思維格局</p>
+                    </div>
+                </div>
+
+                <!-- Game Type Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-cinzel text-xs font-bold" id="matrixBtnGroup">
+                    <button onclick="switchGameMatrix(0)" class="matrix-btn active btn-gold p-3.5 rounded text-center shadow">
+                        <i class="fa-solid fa-shield-cat block text-base mb-1"></i> 德式策略 (EURO)
+                    </button>
+                    <button onclick="switchGameMatrix(1)" class="matrix-btn px-4 py-3.5 bg-draconic-obsidian text-draconic-brightgold rounded text-center border border-draconic-gold/40 hover:border-draconic-gold transition-all">
+                        <i class="fa-solid fa-masks-theater block text-base mb-1"></i> 陣營推理 (DEDUCTION)
+                    </button>
+                    <button onclick="switchGameMatrix(2)" class="matrix-btn px-4 py-3.5 bg-draconic-obsidian text-draconic-brightgold rounded text-center border border-draconic-gold/40 hover:border-draconic-gold transition-all">
+                        <i class="fa-solid fa-handshake block text-base mb-1"></i> 合作溝通 (CO-OP)
+                    </button>
+                    <button onclick="switchGameMatrix(3)" class="matrix-btn px-4 py-3.5 bg-draconic-obsidian text-draconic-brightgold rounded text-center border border-draconic-gold/40 hover:border-draconic-gold transition-all">
+                        <i class="fa-solid fa-dice-d20 block text-base mb-1"></i> 應變運籌 (TACTICS)
+                    </button>
+                </div>
+
+                <!-- Matrix Display Card -->
+                <div id="matrixDisplay" class="bg-parchment-100 p-6 rounded-lg border border-draconic-amber/40 shadow-inner flex flex-col md:flex-row items-center gap-6 transition-all duration-300">
+                    <div class="w-20 h-20 bg-draconic-obsidian text-draconic-gold rounded-full flex items-center justify-center text-4xl border-2 border-draconic-gold shrink-0">
+                        🌾
+                    </div>
+                    <div class="space-y-2">
+                        <h4 id="matrixTitle" class="font-cinzel text-lg font-bold text-draconic-obsidian">德式策略 (Eurogame Engine)</h4>
+                        <p id="matrixDesc" class="font-serifTC text-sm text-gray-800 leading-relaxed">
+                            著重長遠資源鏈調配、最佳解計算與長線佈局。對應資管系中的系統流程優化與資料資源管理。
+                        </p>
+                        <span id="matrixTag" class="inline-block bg-draconic-amber text-white font-cinzel text-xs px-3 py-1 rounded">
+                            資管可轉移能力：資源極大化與流程優化
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT -->
+        <section id="contact" class="space-y-12 pt-8 pb-12">
+            <!-- Section Header -->
+            <div class="text-center space-y-3">
+                <div class="inline-flex items-center gap-3 text-draconic-amber text-lg">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                    <span class="font-cinzel font-bold tracking-widest uppercase text-sm">SEND AN ARCANE SCROLL</span>
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+                <h2 class="font-cinzelDeco text-3xl sm:text-4xl font-bold text-draconic-obsidian">聯繫方式 · 傳音信箱</h2>
+                <div class="w-24 h-1 bg-draconic-amber mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                <!-- Left Direct Email Card -->
+                <div class="dragon-frame p-8 rounded-xl space-y-6">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+
+                    <h3 class="font-cinzel text-xl font-bold text-draconic-obsidian flex items-center gap-3">
+                        <i class="fa-solid fa-envelope-open-text text-draconic-amber"></i> 官方電子郵件 (DIRECT EMAIL)
+                    </h3>
+
+                    <div class="bg-draconic-obsidian text-draconic-brightgold p-6 rounded-lg border border-draconic-gold/50 shadow-inner space-y-4">
+                        <span class="font-cinzel text-xs text-draconic-amber block uppercase tracking-widest">OFFICIAL MAIL ADDRESS:</span>
+                        <div id="emailAddress" class="font-cinzel text-base sm:text-lg font-bold tracking-wider text-draconic-gold break-all">
+                            B11307093@gapps.knu.edu.tw
+                        </div>
+                        
+                        <button onclick="copyOfficialEmail()" class="btn-gold w-full py-3 rounded font-cinzel font-bold text-xs tracking-wider flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fa-solid fa-copy"></i> 一鍵複製信箱地址 (COPY EMAIL)
+                        </button>
+                    </div>
+
+                    <!-- Toast alert -->
+                    <div id="copyToast" class="hidden bg-emerald-900/90 border border-emerald-500 text-emerald-100 font-serifTC text-xs p-3 rounded text-center shadow-lg">
+                        ✨ 已成功複製電子郵件位址至剪貼簿！
+                    </div>
+
+                    <div class="space-y-2 font-serifTC text-xs text-gray-700">
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-draconic-amber"></i> 歡迎交流資管專案與跨領域合作</p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-draconic-amber"></i> 歡迎桌遊戰術切磋與專題討論</p>
+                    </div>
+                </div>
+
+                <!-- Right Quick Message Form -->
+                <div class="dragon-frame p-8 rounded-xl space-y-4">
+                    <div class="corner-totem corner-tl"></div>
+                    <div class="corner-totem corner-tr"></div>
+                    <div class="corner-totem corner-bl"></div>
+                    <div class="corner-totem corner-br"></div>
+
+                    <h3 class="font-cinzel text-xl font-bold text-draconic-obsidian flex items-center gap-3">
+                        <i class="fa-solid fa-scroll text-draconic-amber"></i> 傳送速遞簡訊 (QUICK TRANSMISSION)
+                    </h3>
+
+                    <form onsubmit="handleScrollSubmit(event)" class="space-y-4 font-serifTC text-xs">
+                        <div>
+                            <label class="block font-bold text-draconic-obsidian mb-1">您的尊稱 Name:</label>
+                            <input type="text" required placeholder="例如：冒險者 / 合作夥伴" class="w-full px-4 py-2.5 bg-parchment-100 border border-draconic-amber/60 rounded text-draconic-obsidian focus:outline-none focus:border-draconic-gold">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-draconic-obsidian mb-1">您的聯絡信箱 Email:</label>
+                            <input type="email" required placeholder="your.name@example.com" class="w-full px-4 py-2.5 bg-parchment-100 border border-draconic-amber/60 rounded text-draconic-obsidian focus:outline-none focus:border-draconic-gold">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-draconic-obsidian mb-1">訊息內容 Message:</label>
+                            <textarea rows="3" required placeholder="寫下您的想法..." class="w-full px-4 py-2.5 bg-parchment-100 border border-draconic-amber/60 rounded text-draconic-obsidian focus:outline-none focus:border-draconic-gold"></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold w-full py-3 rounded font-cinzel font-bold text-xs tracking-wider flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> 詠唱並傳送訊息 (SEND TRANSMISSION)
+                        </button>
+                    </form>
+
+                    <div id="formSuccessToast" class="hidden bg-amber-900/90 border border-draconic-gold text-draconic-brightgold font-serifTC text-xs p-3 rounded text-center">
+                        📜 訊息已封印並傳送給紀亮丞！
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-draconic-obsidian text-draconic-brightgold border-t-2 border-draconic-gold py-10 relative z-10 font-cinzel">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-3">
+            <div class="text-xl text-draconic-gold"><i class="fa-solid fa-dragon"></i></div>
+            <p class="text-sm tracking-wider">
+                © 2026 LIANG-CHENG CHI (紀亮丞) · DEPARTMENT OF INFORMATION MANAGEMENT
+            </p>
+            <p class="text-xs text-gray-400 font-serifTC">
+                寫實西方奇幻秘法風格簡歷 · High Fantasy Realistic Scholar Portfolio
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Canvas Interactive Arcane Particle Engine
+        const canvas = document.getElementById('arcaneCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = -100;
+        let mouseY = -100;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            // Spawn cursor trail particles
+            for(let i = 0; i < 2; i++) {
+                particles.push(new ArcaneParticle(mouseX, mouseY, true));
+            }
+        });
+
+        class ArcaneParticle {
+            constructor(x, y, isTrail = false) {
+                this.x = x || Math.random() * canvas.width;
+                this.y = y || Math.random() * canvas.height;
+                this.size = isTrail ? Math.random() * 3 + 1.5 : Math.random() * 2.5 + 1;
+                this.speedX = (Math.random() - 0.5) * (isTrail ? 1.5 : 0.6);
+                this.speedY = (Math.random() - 0.5) * (isTrail ? 1.5 : 0.6) - 0.2;
+                this.life = 1;
+                this.decay = isTrail ? Math.random() * 0.03 + 0.015 : Math.random() * 0.005 + 0.002;
+                // Colors: Golden Amber & Magic Cyan
+                const colors = ['#d4af37', '#f3e5ab', '#b8860b', '#38bdf8'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.life -= this.decay;
+
+                if (this.life <= 0 && !this.isTrail) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.life = 1;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.life * 0.6);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function initArcaneParticles() {
+            particles = [];
+            const count = Math.min(Math.floor(window.innerWidth / 15), 60);
+            for (let i = 0; i < count; i++) {
+                particles.push(new ArcaneParticle());
+            }
+        }
+
+        function animateArcaneParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+                if (p.life <= 0) {
+                    particles.splice(index, 1);
+                }
+            });
+            requestAnimationFrame(animateArcaneParticles);
+        }
+
+        // Spell Burst Trigger
+        function triggerMagicSpell(e) {
+            const rect = e.target.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 40; i++) {
+                particles.push(new ArcaneParticle(startX, startY, true));
+            }
+        }
+
+        // Strategy Matrix Data
+        const matrixData = [
+            {
+                icon: '🌾',
+                title: '德式策略 (Eurogame Engine)',
+                desc: '著重長遠資源鏈調配、最佳解計算與長線佈局。對應資管系中的系統流程優化與資料資源管理。',
+                tag: '資管可轉移能力：資源極大化與流程優化'
+            },
+            {
+                icon: '🎭',
+                title: '陣營推理 (Social Deduction)',
+                desc: '在不對稱資訊與言語交鋒中捕捉微小破綻，強化心理分析與關鍵資訊篩選能力。',
+                tag: '資管可轉移能力：資訊篩選與人心洞察'
+            },
+            {
+                icon: '🤝',
+                title: '合作溝通 (Cooperative Strategy)',
+                desc: '凝聚團隊力量應對動態危機，評估風險並調配各自能力，實現整體效益極大化。',
+                tag: '資管可轉移能力：團隊協作與風險控制'
+            },
+            {
+                icon: '🎲',
+                title: '應變運籌 (Tactical Adaptability)',
+                desc: '在隨機局勢中即時調整路線，迅速找出替代方案，對應系統敏捷開發與變化應對。',
+                tag: '資管可轉移能力：敏捷思考與快速應變'
+            }
+        ];
+
+        function switchGameMatrix(index) {
+            const btns = document.querySelectorAll('.matrix-btn');
+            btns.forEach((btn, i) => {
+                if (i === index) {
+                    btn.className = 'matrix-btn active btn-gold p-3.5 rounded text-center shadow';
+                } else {
+                    btn.className = 'matrix-btn px-4 py-3.5 bg-draconic-obsidian text-draconic-brightgold rounded text-center border border-draconic-gold/40 hover:border-draconic-gold transition-all';
+                }
+            });
+
+            const data = matrixData[index];
+            const display = document.getElementById('matrixDisplay');
+            display.style.opacity = '0';
+            
+            setTimeout(() => {
+                display.querySelector('div:first-child').textContent = data.icon;
+                document.getElementById('matrixTitle').textContent = data.title;
+                document.getElementById('matrixDesc').textContent = data.desc;
+                document.getElementById('matrixTag').textContent = data.tag;
+                display.style.opacity = '1';
+            }, 150);
+        }
+
+        function copyOfficialEmail() {
+            const email = document.getElementById('emailAddress').innerText.trim();
+            const temp = document.createElement('input');
+            temp.value = email;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+
+            const toast = document.getElementById('copyToast');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3500);
+        }
+
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            nav.classList.toggle('hidden');
+        }
+
+        function handleScrollSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('formSuccessToast');
+            toast.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => toast.classList.add('hidden'), 4000);
+        }
+
+        window.onload = function() {
+            initArcaneParticles();
+            animateArcaneParticles();
+        };
+    </script>
+</body>
+</html>
